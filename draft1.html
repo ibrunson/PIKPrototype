@@ -9,9 +9,12 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!--  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+
+<!-- Script to validate file type and dimensions -->
+
   <style>
   body {
     font: 20px Montserrat, sans-serif;
@@ -20,19 +23,19 @@
   }
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
-  .bg-1 { 
+  .bg-1 {
     background-color: #1abc9c; /* Green */
     color: #ffffff;
   }
-  .bg-2 { 
+  .bg-2 {
     background-color: #474e5d; /* Dark Blue */
     color: #ffffff;
   }
-  .bg-3 { 
+  .bg-3 {
     background-color: #ffffff; /* White */
     color: #555555;
   }
-  .bg-4 { 
+  .bg-4 {
     background-color: #2f2f2f; /* Black Gray */
     color: #fff;
   }
@@ -63,34 +66,36 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">The PIKture App</a>
     </div>
-   
+
   </div>
 </nav>
 
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
-  <h1 class="margin">Upload a picture?</h1>  
+  <h1 class="margin">Upload a picture?</h1>
   <center><form class="md-form" class="mb-3">
     <div class="file-field">
       <a class="btn-floating peach-gradient mt-0 float-left">
         <i class="fas fa-paperclip" aria-hidden="true"></i>
-        <input type="file">
+        <input id="upload" name="upload" type="file" accept=".jpg, .jpeg, .png, .gif, .bmp, .webp, .raw, .ico, .pdf, .tiff, .tif">
+        <input type="submit">
       </a>
-     
     </div>
+    <div>
+      <!--<button onclick="validateFileDimensions">Submit</button> -->
   </form></center>
 </div>
 
 
-  
+
 
 <!-- Footer -->
 <footer class="container-fluid bg-4 text-center">
-  <p>PIKture Application 2019</a></p> 
+  <p>PIKture Application 2019</a></p>
 </footer>
 
 </body>
