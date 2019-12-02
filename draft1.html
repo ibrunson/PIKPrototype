@@ -78,17 +78,18 @@
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
   <h1 class="margin">Upload a picture?</h1>
-  <center><form class="md-form" class="mb-3">
+  <center><form action="upload.js" method="POST" class="md-form" class="mb-3">
     <div class="file-field">
       <a class="btn-floating peach-gradient mt-0 float-left">
         <i class="fas fa-paperclip" aria-hidden="true"></i>
-        <input id="upload" name="upload" type="file" accept=".jpg, .jpeg, .png, .gif, .bmp, .webp, .raw, .ico, .pdf, .tiff, .tif">
-        <input type="submit">
+        <input id="file" name="files[]" type="file" accept=".jpg, .jpeg, .png, .gif, .bmp, .webp, .raw, .ico, .pdf, .tiff, .tif">
+        <input type="submit" value="UploadFile" name="submit">
       </a>
     </div>
     <div>
       <!--<button onclick="validateFileDimensions">Submit</button> -->
   </form></center>
+  <script type="text/javascript" src="upload.js"></script>
 </div>
 
 <div class="container-fluid bg-2 text-center">
