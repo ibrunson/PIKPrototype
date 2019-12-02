@@ -82,8 +82,9 @@
     <div class="file-field">
       <a class="btn-floating peach-gradient mt-0 float-left">
         <i class="fas fa-paperclip" aria-hidden="true"></i>
-        <input id="upload" name="upload" type="file" accept=".jpg, .jpeg, .png, .gif, .bmp, .webp, .raw, .ico, .pdf, .tiff, .tif">
-        <input type="submit">
+        <input id="upload" name="upload" type="file" accept=".jpg, .jpeg, .png, .gif, .bmp, .webp, .raw, .ico, .pdf, .tiff, .tif" />
+        <script type="text/javascript">function showResponse(){document.getElementById("imageUploadResponse").style.display="block";}</script>
+        <button onclick="showResponse();" type="button" text="submit">Submit</button>
       </a>
     </div>
     <div>
@@ -91,13 +92,18 @@
   </form></center>
 </div>
 
-<div class="container-fluid bg-2 text-center">
+<div class="container-fluid bg-2 text-center" id="imageUploadResponse" style="display:none">
   <h1 class="margin">Results from Picture:</h1>
   <p id="JKSSResponse"></p>
   <script> 
     // TODO: Use Image from upload for API call here
-    const JKSS = new JKSSGateway();
-    document.getElementById("JKSSResponse").innerHTML = JKSS.baseURL;
+    (async () => {
+      const JKSS = new JKSSGateway();
+      const definitelyTheImageUploaded = "https://image.shutterstock.com/image-photo/red-apple-on-white-background-600w-158989157.jpg";
+      const data = await JKSS.getStoreData(definitelyTheImageUploaded);
+      document.getElementById("JKSSResponse").innerHTML = JSON.stringify(data);
+    })();
+
   </script>
 </div>
 

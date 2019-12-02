@@ -4,7 +4,7 @@ class JKSSGateway {
      * @param {String} baseURL - the URL of the application to which requests should be sent
      */
     constructor(baseURL = null) {
-        this._baseURL = baseURL ? baseURL : 'https://ec2-107-21-69-59.compute-1.amazonaws.com:8090';
+        this._baseURL = baseURL ? baseURL : 'http://ec2-18-189-21-211.us-east-2.compute.amazonaws.com:8090';
     }
 
     /**
@@ -21,7 +21,7 @@ class JKSSGateway {
      * @returns {JSON} The response from the API
      */
     async _JKSSRequest(endpoint, imageURL) {
-        const res = await fetch(`${baseURL}/${endpoint}/?url=${imageURL}`);
+        const res = await fetch(`${this._baseURL}/${endpoint}/?url=${imageURL}`, {method: 'GET'});
         const parseRes = await res.json();
         
         return parseRes;
